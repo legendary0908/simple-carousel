@@ -1,0 +1,40 @@
+.swiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    touch-action: pan-y; /* prevent browser's default behaviour on swiping horizontally */
+  }
+  
+  &-list {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease-out;
+    &.is-swiping {
+      transition: none;
+    }
+    &-prev, &-next {
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
+    &-prev {
+      left: -50px;
+    }
+    &-next {
+      right: -50px;
+    }
+  }
+}
